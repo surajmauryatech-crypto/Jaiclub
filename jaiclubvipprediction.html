@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Join Telegram</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(270deg, #0f0c29, #302b63, #24243e);
+  background-size: 600% 600%;
+  animation: bgAnimation 10s ease infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Background Animation */
+@keyframes bgAnimation {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+.card {
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(10px);
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  width: 300px;
+  color: white;
+  box-shadow: 0 0 30px rgba(255,0,255,0.3);
+}
+
+.profile {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  border: 3px solid #ff00cc;
+}
+
+/* CHANGE NAME HERE */
+h1 {
+  margin: 10px 0;
+  color: #ff4dff;
+}
+
+.tagline {
+  font-size: 14px;
+  color: #ccc;
+  margin-bottom: 20px;
+}
+
+/* BUTTON */
+.btn {
+  display: block;
+  padding: 12px;
+  border-radius: 30px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  background: linear-gradient(90deg, #6a5cff, #ff00cc);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* TAP ANIMATION */
+.btn:active {
+  transform: scale(0.95);
+  box-shadow: 0 0 20px #ff00cc;
+}
+
+.timer {
+  margin: 15px 0;
+  font-size: 18px;
+  color: #ff66cc;
+}
+
+.progress {
+  height: 5px;
+  background: #333;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #6a5cff, #ff00cc);
+  animation: load 25s linear forwards;
+}
+
+/* Progress Animation */
+@keyframes load {
+  from {width: 0%;}
+  to {width: 100%;}
+}
+
+.features {
+  text-align: left;
+  font-size: 14px;
+}
+
+.features p {
+  margin: 6px 0;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+  <!-- CHANGE IMAGE HERE -->
+  <img src="https://ibb.co/VZyw4gg" class="profile">
+
+  <!-- CHANGE NAME HERE -->
+  <h1>JAI CLUB VIP PREDICTION</h1>
+
+  <p class="tagline">Where Strategy Meets Prediction</p>
+
+  <!-- TELEGRAM LINK CHANGE HERE -->
+  <a href="https://t.me/+nwibp2qiwDY4MTNl" class="btn">Join Telegram Now</a>
+
+  <div class="timer">Redirecting in <span id="count">25</span></div>
+
+  <div class="progress">
+    <div class="progress-bar"></div>
+  </div>
+
+  <div class="features">
+    <p>⭐ Daily colour predictions</p>
+    <p>⭐ Expert strategy insights</p>
+    <p>⭐ Smart risk management</p>
+    <p>⭐ Live signals & updates</p>
+  </div>
+
+</div>
+
+<script>
+let time = 25;
+let count = document.getElementById("count");
+
+let timer = setInterval(() => {
+  time--;
+  count.innerText = time;
+
+  if(time <= 0){
+    clearInterval(timer);
+
+    // AUTO REDIRECT LINK CHANGE HERE
+    window.location.href = "https://t.me/yourchannel";
+  }
+}, 1000);
+</script>
+
+</body>
+</html>
