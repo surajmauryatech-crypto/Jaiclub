@@ -128,35 +128,49 @@ h1 {
   <!-- TELEGRAM LINK CHANGE HERE -->
   <a href="https://t.me/+nwibp2qiwDY4MTNl" class="btn">Join Telegram Now</a>
 
-  <div class="timer">Redirecting in <span id="count">25</span></div>
-
-  <div class="progress">
-    <div class="progress-bar"></div>
-  </div>
-
-  <div style="text-align: center;">
-  <h2 style="color: #8b5cf6; margin-bottom: 20px;">What You'll Get</h2>
-  <div style="color: #d1d5db; font-size: 18px; line-height: 2;">
-    <p><span style="color: #ff1493; margin-right: 8px;">★</span> Daily colour predictions</p>
-    <p><span style="color: #ff1493; margin-right: 8px;">★</span> Expert strategy insights</p>
-    <p><span style="color: #ff1493; margin-right: 8px;">★</span> Smart risk management</p>
-    <p><span style="color: #ff1493; margin-right: 8px;">★</span> Live signals & updates</p>
-  </div>
+  <div style="text-align: center; margin: 20px auto; max-width: 400px; font-family: sans-serif;">
+  <div style="color: #a09ea5; font-size: 18px; margin-bottom: 8px;">Redirecting in</div>
+  
+  <div id="timerDisplay" style="color: #ff33cc; font-size: 40px; font-weight: bold; margin-bottom: 15px;">00:30</div>
+  
+  <div style="width: 100%; background-color: #1a1a24; height: 6px; border-radius: 5px; margin-bottom: 30px; overflow: hidden;">
+    <div id="progressBar" style="width: 100%; height: 100%; background: linear-gradient(to right, #6b4cff, #ff33cc); border-radius: 5px; transition: width 1s linear;"></div>
   </div>
   
-
+  <h3 style="color: #8a63f7; font-size: 24px; font-weight: bold; margin-bottom: 20px;">What You'll Get</h3>
+  
+  <div style="text-align: left; display: inline-block; color: #dcdcdc; font-size: 18px; line-height: 2;">
+    <div><span style="color: #ff33cc; margin-right: 10px;">★</span>Daily colour predictions</div>
+    <div><span style="color: #ff33cc; margin-right: 10px;">★</span>Expert strategy insights</div>
+    <div><span style="color: #ff33cc; margin-right: 10px;">★</span>Smart risk management</div>
+    <div><span style="color: #ff33cc; margin-right: 10px;">★</span>Live signals & updates</div>
+  </div>
 </div>
 
 <script>
-let time = 25;
-let count = document.getElementById("count");
+  let totalSeconds = 30; // 30 सेकंड का टाइम
+  let secondsLeft = totalSeconds;
+  const display = document.getElementById('timerDisplay');
+  const progressBar = document.getElementById('progressBar');
 
-let timer = setInterval(() => { 
-  time--;
-  count.innerText = time;
+  const countdown = setInterval(() => {
+    secondsLeft--;
+    
+    // टाइमर का टेक्स्ट अपडेट करना
+    let displaySeconds = secondsLeft < 10 ? '0' + secondsLeft : secondsLeft;
+    display.innerText = '00:' + displaySeconds;
+    
+    // प्रोग्रेस बार की चौड़ाई (width) कम करना
+    let percentage = (secondsLeft / totalSeconds) * 100;
+    progressBar.style.width = percentage + '%';
 
-  if(time <= 0){
-    clearInterval(timer);
+    // जब टाइमर 0 हो जाए
+    if (secondsLeft <= 0) {
+      clearInterval(countdown);
+      display.innerText = '00:00';
+      progressBar.style.width = '0%';
+
+
 
     // AUTO REDIRECT LINK CHANGE HERE
     window.location.href = "https://t.me/+nwibp2qiwDY4MTNl";
